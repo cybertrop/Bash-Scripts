@@ -5,7 +5,7 @@
 # one can somewhat avoid this issue... I THINK
 
 # please note this script is an example to show what you can do; this SPECIFIC script works SPECIFICALLY for www.cisco.com 
-wget www.cisco.com ; cat index.html* | grep "href=" | cut -d "/" -f 3 | grep "\." | cut -d '"' -f 1 | sort -u > index.html
+wget www.cisco.com ; cat index.html* | grep "href=" | cut -d "/" -f 3 | grep "\." | cut -d '"' -f 1 | sort -u  >> index.html
 
 # We are now going to add onto this script and do some basic DNS and ICMP discovery
 # Once you have the results from above, you can run this next piece of code on your HTML document
