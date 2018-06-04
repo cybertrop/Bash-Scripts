@@ -5,10 +5,12 @@
 # one can somewhat avoid this issue... I THINK
 
 # please note this script is an example to show what you can do; this SPECIFIC script works SPECIFICALLY for www.cisco.com 
+# Call this disc.sh
 wget www.cisco.com ; cat index.html* | grep "href=" | cut -d "/" -f 3 | grep "\." | cut -d '"' -f 1 | sort -u  >> index.html
 
 # We are now going to add onto this script and do some basic DNS and ICMP discovery
 # Once you have the results from above, you can run this next piece of code on your HTML document
+# For now just create another script called "whatever.sh"
 for url in $(cat index.html); do
   host $url & nslookup $url | grep "has address" | cut -d " " -f 3 
 done
