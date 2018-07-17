@@ -16,3 +16,17 @@ for url in $(cat index.html); do
 done
 
 # I want to combine these two into one...
+
+# Here is a similar iteration of the top script
+
+# Quick bash script to resolve a list of IPs to host
+# You can cut and paste a large number of IPs into a text file and run this script to resolve
+
+for ip in $(cat ip.txt); do
+    nslookup $ip | grep "name" | cut -d " " -f 3 | uniq -u
+done
+
+# OR you can do it like this
+
+while read list; do nslookup $list | grep "name" | cut -d " " -f 3 | uniq -u
+done < ip.txt
