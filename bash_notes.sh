@@ -17,5 +17,5 @@ base64 -D txt.txt # Boom you win
 #! the other list is the list of original IPs provided by Jane, we want to see which of the user accessed IPs were in Janes's
 #! list. We will call Bob's list ip.txt and Janes's list ip2.txt
 
-# Please note both of these txt files should be sorted with "sort -u" or something similar
+# Please note both of these txt files should be sorted with "sort -u" or some similar Bash tool/algorithm 
 sdiff ip.txt ip2.txt # This will show you the results
