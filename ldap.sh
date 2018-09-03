@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Simple LDAP query to find user data
+# Working on providing arguments for script use 
 
 ldapsearch -h 192.168.0.1 -b "DC=corp,DC=<domain name>,DC=com" "AccountName=username" 
 
