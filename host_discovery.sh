@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # Please note this technique can be easily obfuscated by a domain host; but I believe that specifying user-agent strings
-#! (like in Curl) one can somewhat avoid this issue...
+# (like in Curl) one can somewhat avoid this issue...
+# Remember! Tunnel your work to avoid detection...
 
 # Script works SPECIFICALLY for www.cisco.com
 wget www.cisco.com ; cat index.html* | grep "href=" | cut -d "/" -f 3 | grep "\." | cut -d '"' -f 1 | sort -u  >> index.html
