@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Author: Link
+# Date Created: 08/31/2024
+# Date Modified:
+
+# Description
+# Using a while loop to run through a list of IP addresses
+
+# Usage
+# while_osint
+
+while read -r $ip; do
+	nslookup $ip | grep "name = .*" | sed 's/name = //g' | awk '{print $2}'
+	done < ip.txt
