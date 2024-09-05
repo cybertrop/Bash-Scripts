@@ -13,3 +13,4 @@
 while read -r $ip; do
 	nslookup $ip | grep "name = .*" | sed 's/name = //g' | awk '{print $2}'
 	done < ip.txt
+exit 0
