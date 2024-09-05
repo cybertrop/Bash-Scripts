@@ -1,21 +1,25 @@
 #!/bin/bash
 
-# Author: Cybertrop
-# Date Created: 06/20/22
-# Last Modified: 07/01/22
+# Author: Link
+# Date Created: 08/24/2024
+# Date Modified: 08/24/2024
 
-# Description: Back up script
-# Usage: This will create a tarball of your home dir and save it accordingly
+# Description:
+# Backup script of all the files in the home directory and save them to .tar archive
 
-time=$(date +%H:%m:%S) # Command Substitution - capturing the value of the command and using parameter expansion to extract
+# Usage
+# backup_script
 
-echo "Hello, ${USER^}! The time is $time"
-echo "I will now back up your home directory, $HOME"
+# tar -cvf ~/scripts/my_backup_$(date +%d-%m-%Y_%H-%M-%S)".tar ~/* 2>/dev/null
+
+SCRIPTS_DIR=/Users/link/Desktop/scripts
 currentdir=$(pwd)
-echo "You are running this script from $currentdir"
-echo "Therefore, I will save the backup in $currentdir "
 
-tar -cf $currentdir/my_backp"$(date +%d-%m-%Y_%H-%M-%S)".tar ~/* 2>/dev/null
-echo "Backup completed successfully!"
+echo -e "Hello $USER,\nI will now back up your current directory $currentdir"
+echo -e "\nYou're running this script from $currentdir, but we will still store it in $SCRIPTS_DIR"
+
+tar -cf $SCRIPTS_DIR/my_backup_"$(date +%d-%m-%Y_%H-%M-%S)".tar $currentdir 2>/dev/null
+
+echo -e "\nBack up of $currentdir is now complete!"
 
 exit 0
